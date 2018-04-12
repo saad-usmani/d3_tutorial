@@ -30,7 +30,13 @@
 			   .data(dataset)
 			   .enter()
 			   .append("circle")
-               .attr("r", 6);
+               .attr("r", 6)
+               .attr("x", function(d, i) {
+			   		return i * (w / dataset.length);
+			   })
+			   .attr("y", function(d) {
+			   		return h - (d * 4);
+			   });
 			
 		</script>
 	</body>
